@@ -1,0 +1,17 @@
+{
+  "name": "matriz5w2h",
+  "version": "1.0.0",
+  "description": "A helper tool for Egide",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",  
+    "test": "jest"
+  },
+  "keywords": [
+    "egide",
+    "matriz"
+  ],
+  "author": "TmSalviano",
+  "license": "MIT"
+}

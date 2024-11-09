@@ -1,0 +1,208 @@
+/* Estilo para a caixa externa */
+.outer-box {
+  max-width: 50vw;
+  min-width: 45vw;
+  min-height: 30vh;
+  max-height: 45vh;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #1e7ad5;
+  border: 2px solid #050506;
+  border-radius: 15px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  position: relative; /* Importante para animações internas */
+}
+
+/* Título do formulário */
+.form-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #fbfbfb;
+  margin-bottom: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Barra de Progresso */
+.progress-bar {
+  width: 100%;
+  background-color: #e0e0e0;
+  height: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.progress {
+  background-color: #007bff;
+  height: 100%;
+  width: 0;
+  border-radius: 5px;
+  transition: width 0.5s ease-in-out;
+}
+
+/* Estilo do Formulário */
+form {
+  max-width: 600px;
+  padding: 30px;
+  background-color: #ffffff;
+  border: 2px solid #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  font-family: Arial, sans-serif;
+  text-align: center;
+  position: relative;
+}
+
+label {
+  font-weight: bold;
+  color: #030303;
+  display: block;
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+}
+
+input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.4);
+  outline: none;
+}
+
+/* Botões de Navegação */
+.navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+  position: relative; /* Importante para não aplicar animações desnecessárias */
+}
+
+button[type="button"],
+button[type="submit"] {
+  width: 48%;
+  padding: 12px;
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  position: relative;
+}
+
+button[type="button"]:hover,
+button[type="submit"]:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+button[type="button"]:active,
+button[type="submit"]:active {
+  background-color: #004085;
+}
+
+/* Estilo das mensagens de erro */
+.error-message {
+  color: red;
+  font-size: 0.9em;
+  margin-top: 5px;
+  text-align: left;
+}
+
+/* Animação para a caixa de campo sair (completa) */
+.animate-box-exit {
+  animation: boxFadeOut 0.5s ease-in-out forwards;
+}
+
+/* Animação para a caixa de campo entrar (completa) */
+.animate-box-enter {
+  animation: boxFadeIn 0.5s ease-in-out forwards;
+}
+
+/* Animação para o campo atual sair (desaparecer e subir) */
+.animate-exit {
+  animation: fadeOut 0.5s ease-in-out forwards;
+}
+
+/* Animação para o novo campo entrar (subindo) */
+.animate-enter {
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+/* Animação para o próximo campo (subindo) */
+.animate-next-enter {
+  opacity: 1;
+  transform: translateY(0); /* Novo campo subindo */
+  animation: slideIn 0.5s ease-in-out forwards;
+}
+
+/* Animação de saída do próximo campo (subindo) */
+.animate-next-exit {
+  opacity: 0;
+  transform: translateY(-100%); /* Campo atual saindo para cima */
+  animation: slideOut 0.5s ease-in-out forwards;
+}
+
+/* Defina a animação de entrada do próximo campo (subindo) */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Defina a animação de saída do campo atual (subindo) */
+@keyframes slideOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}
+
+/* Defina a animação de fade para o desaparecimento */
+@keyframes boxFadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Defina a animação de fade para a entrada */
+@keyframes boxFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Especificidade da animação para o botão de "Enviar" */
+button[type="submit"].animate-submit {
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
