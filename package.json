@@ -4,9 +4,9 @@
   "description": "A helper tool for Egide",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js",  
-    "test": "jest"
+    "start": "concurrently \"npm run api\" \"npm run matriz5w\"",
+    "api": "cd api && nest start --watch",
+    "matriz5w": "cd matriz5w-master && npm start"
   },
   "keywords": [
     "egide",
